@@ -110,7 +110,78 @@
             </div>
         </div>
     </section>
+<!-- GPS Tracking Armada (Hidden Clean UI) -->
+<section id="tracking" class="container fade-in" style="padding:40px 0;">
+    <div class="section-header text-center">
+        <span class="subtitle">IoT Feature</span>
+        <h2>Tracking Armada</h2>
+    </div>
 
+    <div style="text-align:center; margin-top:20px;">
+        <p style="font-size:14px; color:#666;">
+            Monitoring lokasi armada pengangkut sampah secara real-time
+        </p>
+
+        <div style="
+            margin-top:20px;
+            background:#ffffff;
+            padding:15px;
+            border-radius:10px;
+            display:inline-block;
+            font-size:14px;
+        ">
+            <p id="gps-status">Menghubungkan ke armada...</p>
+            <p id="gps-coord" style="font-weight:bold; color:var(--primary);">-</p>
+        </div>
+    </div>
+</section>
+<!-- Stakeholder -->
+<section id="stakeholder" class="container fade-in" style="padding:60px 0;">
+    <div class="section-header text-center">
+        <span class="subtitle">Kolaborasi</span>
+        <h2>Stakeholder & Mitra</h2>
+    </div>
+
+    <div style="
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap:20px;
+        margin-top:30px;
+        text-align:center;
+    ">
+
+        <div style="background:#fff; padding:20px; border-radius:10px;">
+            🏛️<br>
+            <strong>Pemerintah</strong>
+            <p style="font-size:12px; color:#666;">Regulasi & Dukungan</p>
+        </div>
+
+        <div style="background:#fff; padding:20px; border-radius:10px;">
+            ♻️<br>
+            <strong>Masyarakat</strong>
+            <p style="font-size:12px; color:#666;">Sumber Sampah</p>
+        </div>
+
+        <div style="background:#fff; padding:20px; border-radius:10px;">
+            🚚<br>
+            <strong>Armada</strong>
+            <p style="font-size:12px; color:#666;">Transportasi</p>
+        </div>
+
+        <div style="background:#fff; padding:20px; border-radius:10px;">
+            🏭<br>
+            <strong>Industri</strong>
+            <p style="font-size:12px; color:#666;">Pengguna Bahan Bakar</p>
+        </div>
+
+        <div style="background:#fff; padding:20px; border-radius:10px;">
+            💻<br>
+            <strong>Platform IoT</strong>
+            <p style="font-size:12px; color:#666;">Monitoring & Sistem</p>
+        </div>
+
+    </div>
+</section>
     <section id="contact" class="cta-section section-bg fade-in">
         <div class="container cta-container">
             <div class="cta-map">
@@ -139,5 +210,17 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+function updateGPS() {
+    const lat = (-8.1 + Math.random() * 0.1).toFixed(6);
+    const lng = (112.2 + Math.random() * 0.1).toFixed(6);
+
+    document.getElementById("gps-status").innerText = "Armada aktif (real-time)";
+    document.getElementById("gps-coord").innerText = `Lat: ${lat}, Lng: ${lng}`;
+}
+
+setInterval(updateGPS, 3000);
+updateGPS();
+</script>
 </body>
 </html>
